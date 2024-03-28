@@ -34,15 +34,15 @@ pipeline {
     }
     stage('DockerLogin') {
       steps {
-        withCredentials([usernamePassword(credentialsId: 'Dockerlogin', passwordVariable: 'dockerhub-pass', usernameVariable: 'dockerhub-user')]) {
-        sh 'docker login -u ${env.dockerhub-user} -p ${env.docker-pass}'
-            }
+        withCredentials([usernamePassword(credentialsId: 'dockerlogin', passwordVariable: 'dockerpass', usernameVariable: 'dockeruser')]) {
+       sh ' docker login -u ${env.dockeruser} -p ${env.dockerpass}'
+}
         }
     } 
   
     stage('Push Image to DockerHub') {
       steps {
-        sh 'docker push roshdockerhub/banking-project:1.0'
+        sh 'docker push roshdockerhub/insureme-project:1.0'
             }
     } 
   
