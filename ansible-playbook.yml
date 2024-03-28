@@ -15,5 +15,6 @@
     command : sudo systemctl start docker
     become : yes
     become_user : root
-
+  - name : Doploy the image and run 
+    command : docker run -itd -p 8084:8081 roshdockerhub/insureme-project:1.0
   
