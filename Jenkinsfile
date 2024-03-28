@@ -45,6 +45,13 @@ pipeline {
         sh 'docker push roshdockerhub/insureme-project:1.0'
             }
     } 
+
+    stage('Ansible Config and Deployment') {
+      steps {
+        ansiblePlaybook credentialsId: 'ansible-ssh', disableHostKeyChecking: true, installation: 'ansible', inventory: '/etc/ansible/hosts', playbook: 'ansible-playbook.yml', vaultTmpPath: ''
+            }
+    }
+    } 
   
   
   }
