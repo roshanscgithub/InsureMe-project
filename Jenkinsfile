@@ -10,7 +10,7 @@ pipeline {
    stage('CheckOut') {
       steps {
         echo 'Checkout the source code from GitHub'
-        https://github.com/roshanscgithub/InsureMe-project.git
+        git 'https://github.com/roshanscgithub/InsureMe-project.git'
             }
     }
     
