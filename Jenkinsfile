@@ -29,7 +29,7 @@ pipeline {
     
     stage('Docker Image Creation') {
       steps {
-        sh 'docker build -t roshdockerhub/insureme-project:1.0'
+        sh 'docker build -t roshdockerhub/insureme-project:1.0 .'
             }
     }
     stage('DockerLogin') {
